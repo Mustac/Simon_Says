@@ -46,7 +46,7 @@ $(".btn").mousedown(function () {
       listOfColors = [];
       playerColors = [];
       $(".status").text("Game Over, Click A to restart");
-      new Audio("../sounds/wrong.mp3").play();
+      new Audio("sounds/wrong.mp3").play();
       scoreTracker = 0;
       
 

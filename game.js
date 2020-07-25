@@ -14,6 +14,20 @@ $(document).on("keydown", function (e) {
   }
 });
 
+
+$(".start-btn").on("click", function () {
+
+  if (!gameRunning  && !gameStarted) {
+    $(".score").text("Score : " +scoreTracker);
+    $(".status").text("AI turn");
+    gameStarted=true;
+    gameRunning = true;
+    startAGame();
+    gameover = false;
+
+  }
+});
+
 var scoreTracker = 0;
 var mouseclickCounter = 0;
 $(".btn").mousedown(function () {

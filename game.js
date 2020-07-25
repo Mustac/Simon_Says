@@ -1,3 +1,24 @@
+var gameStarted = false;
+var gameOver = true;
+var gameRunning = false;
+var playersTurn = false;
+var playerColors = [];
+var listOfColors = [];
+var scoreTracker = 0;
+var mouseclickCounter = 0;
+
+function Sounds(color, sound) {
+  this.color = color;
+  this.sound = sound;
+}
+// add all colors and sounds to a list of objects Sounds
+var sounds = [
+  new Sounds("green", "sounds/green.mp3"),
+  new Sounds("red", "sounds/red.mp3"),
+  new Sounds("yellow", "sounds/yellow.mp3"),
+  new Sounds("blue", "sounds/blue.mp3")
+]
+
 // start a game and calls a StartAGame method
 //sets gameRunning to true
 $(document).on("keydown", function (e) {
@@ -14,7 +35,8 @@ $(document).on("keydown", function (e) {
   }
 });
 
-
+// start a game and calls a StartAGame method
+// sets gameRunning to true
 $(".start-btn").on("click", function () {
 
   if (!gameRunning  && !gameStarted) {
@@ -28,8 +50,8 @@ $(".start-btn").on("click", function () {
   }
 });
 
-var scoreTracker = 0;
-var mouseclickCounter = 0;
+
+// spaghetti
 $(".btn").mousedown(function () {
   if (mouseclickCounter < listOfColors.length && !gameover && !gameRunning) {
 
@@ -68,28 +90,8 @@ $(".btn").mousedown(function () {
   }
 });
 
-var gameStarted = false;
-var gameOver = true;
-var gameRunning = false;
-var playersTurn = false;
-var playerColors = [];
-var listOfColors = [];
 
 
-
-// add all colors and sounds to a list of objects Sounds
-var sounds = [
-  new Sounds("green", "sounds/green.mp3"),
-  new Sounds("red", "sounds/red.mp3"),
-  new Sounds("yellow", "sounds/yellow.mp3"),
-  new Sounds("blue", "sounds/blue.mp3")
-]
-
-function Sounds(color, sound) {
-  this.color = color;
-  this.sound = sound;
-}
-// -- Calling this function returns a random color 
 
 
 //Once it started add a random color to the listOfColors
@@ -137,13 +139,5 @@ function playColor(color) {
     }
   }
 };
-
-
-
-
-
-
-
-
 
 
